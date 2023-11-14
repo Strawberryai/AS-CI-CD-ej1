@@ -2,13 +2,15 @@ name: Primer workflow
 on: push
 
 jobs:
-hola_mundo:
-steps:
-- name: Bajar codigo
-uses: actions/checkout@v4
-- name: Ejecutar codigo
-run: python3 main.py
-- name: Ejecutar código en /tmp
-run: |
-cd /tmp
-python3 main.py
+  hola_mundo:
+    steps:
+      - name: Bajar codigo
+        uses: actions/checkout@v4
+    
+      - name: Ejecutar codigo
+        run: python3 main.py
+    
+      - name: Ejecutar código en /tmp
+        run: |
+          cd /tmp
+          python3 main.py

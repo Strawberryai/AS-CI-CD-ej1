@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
     
       - name: Ejecutar codigo
-        run: python3 main.py
+        run: python3 test.py
     
       - name: Ejecutar código en /tmp
         run: |

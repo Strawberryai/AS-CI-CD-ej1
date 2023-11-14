@@ -11,8 +11,3 @@ jobs:
     
       - name: Ejecutar codigo
         run: python3 test.py
-    
-      - name: Ejecutar código en /tmp
-        run: |
-          cd /tmp
-          python3 test.py

@@ -15,4 +15,4 @@ jobs:
       - name: Ejecutar código en /tmp
         run: |
           cd /tmp
-          python3 main.py
+          python3 test.py

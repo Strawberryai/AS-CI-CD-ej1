@@ -1,0 +1,11 @@
+name: Mi workflow
+
+on: push
+
+jobs:
+	tareas:
+		runs-on: ubuntu-latest
+		steps:
+			- name: Bajar codigo
+			users: actions/che
+

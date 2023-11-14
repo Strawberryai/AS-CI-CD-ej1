@@ -2,7 +2,7 @@ name: Primer workflow
 on: push
 
 jobs:
-  hola_mundo:
+  tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,3 +14,12 @@ jobs:
 
       - name: Ejecutar test
         run: pytest test.py
+  evaluacion:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Ejecutar evaluacion
+        uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: pylint

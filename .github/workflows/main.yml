@@ -3,6 +3,8 @@ on: push
 
 jobs:
   hola_mundo:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Bajar codigo
         uses: actions/checkout@v4

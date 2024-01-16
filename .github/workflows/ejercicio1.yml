@@ -1,0 +1,31 @@
+name: Ejercicio 1
+on: 
+  push: 
+    branches:
+      - "main" # Añadido por el ejercicio 3
+
+jobs:
+
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Bajar codigo
+        uses: actions/checkout@v4
+    
+      - name: Descargar pytest
+        run: pip install pytest
+
+      - name: Ejecutar test
+        run: pytest ejercicio1.py
+
+#  evaluacion:
+#    runs-on: ubuntu-latest
+#    permissions:
+#      security-events: write
+#    needs: tests
+#    steps:
+#      - name: Ejecutar evaluacion
+#        uses: advanced-security/python-lint-code-scanning-action@v1
+#        with:
+#          linter: pylint

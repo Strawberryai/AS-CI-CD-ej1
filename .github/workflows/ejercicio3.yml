@@ -1,0 +1,14 @@
+# Utilizar el repositorio de código creado en el ejercicio 1.
+#
+# Crear 2 workflows:
+#   - Se dispara al hacer Push en main, ejecuta los Tests como se describe en el ejercicio 1.
+#   - Se dispara al hacer Pull Request en cualquier rama, ejecuta la acción Linter presentada en el ejercicio 2.
+# 
+# Crear una nueva rama y añadir en el código:
+#   - Una función que incremente el saldo en 1000.
+#   - El Test correspondiente.
+#   - Hacer una Pull Request para juntar la rama con main.
+#   - Verificar que cada workflow se ha ejecutado correctamente.
+
+
+# Se han modificado los archivos anteriores con los comentarios descritos

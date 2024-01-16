@@ -1,0 +1,25 @@
+# Crear un repositorio público con un fichero de código
+# Python que contenga lo siguiente:
+#   - Una función que sume 2 números.
+#   - Dos variables con 2 números (a vuestra elección).
+#   - Un comando print para mostrar la suma de los 2 números usando la función.
+#
+# Crear un workflow en el repositorio que utilice la siguiente acción para analizar la calidad del código.
+# - Nombre: advanced-security/python-lint-code-scanning-action@v1
+# - Parámetros:
+#   - linter: pylint
+
+name: Ejercicio 2
+
+on: pull_request # añadido por el ejercicio 3
+
+jobs:
+  evaluacion:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Ejecutar evaluacion
+        uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: pylint

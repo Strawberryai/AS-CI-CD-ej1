@@ -1,0 +1,40 @@
+# Configuración pila ELK
+#
+# Fichero Docker Compose para desplegar la pila ELK. Los componentes están en la versión 8.11.1.
+# Advertencias:
+#   - La pila ELK utiliza aprox. 5 GB de RAM.
+#   - Logstash requiere que existe una carpeta "pipeline" con la configuración. Esta se monta como un bind mount.
+#   - El control de autenticación está deshabilitado para Elasticsearch. 
+# 
+
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.11.1
+    container_name: logstash
+    volumes:
+      - ./pipeline:/usr/share/logstash/pipeline
+    depends_on:
+      - elasticsearch
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - data01:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.1
+    container_name: kibana
+    ports:
+      - 80:5601
+    depends_on:
+      - elasticsearch
+
+volumes:
+  data01:
